@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Alumniid:</strong>
+  <%= @alumni.alumniID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @alumni.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @alumni.email %>
+</p>
+
+<p>
+  <strong>Organizationid:</strong>
+  <%= @alumni.organizationID %>
+</p>
+
+<%= link_to 'Edit', edit_alumni_path(@alumni) %> |
+<%= link_to 'Back', alumnis_path %>

@@ -1,0 +1,2 @@
+module SpeakerListsHelper
+end

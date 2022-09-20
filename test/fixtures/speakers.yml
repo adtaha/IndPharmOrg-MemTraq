@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speakerID: 1
+  speakerName: MyString
+  email: MyString
+  organizationID: 1
+
+two:
+  speakerID: 1
+  speakerName: MyString
+  email: MyString
+  organizationID: 1

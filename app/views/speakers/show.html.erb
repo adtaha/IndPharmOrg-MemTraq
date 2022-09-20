@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Speakerid:</strong>
+  <%= @speaker.speakerID %>
+</p>
+
+<p>
+  <strong>Speakername:</strong>
+  <%= @speaker.speakerName %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @speaker.email %>
+</p>
+
+<p>
+  <strong>Organizationid:</strong>
+  <%= @speaker.organizationID %>
+</p>
+
+<%= link_to 'Edit', edit_speaker_path(@speaker) %> |
+<%= link_to 'Back', speakers_path %>

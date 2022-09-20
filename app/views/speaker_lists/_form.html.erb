@@ -1,0 +1,27 @@
+<%= form_with(model: speaker_list) do |form| %>
+  <% if speaker_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(speaker_list.errors.count, "error") %> prohibited this speaker_list from being saved:</h2>
+
+      <ul>
+        <% speaker_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :speakerListID %>
+    <%= form.number_field :speakerListID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speakerID %>
+    <%= form.number_field :speakerID %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_with(model: organization_list) do |form| %>
+  <% if organization_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(organization_list.errors.count, "error") %> prohibited this organization_list from being saved:</h2>
+
+      <ul>
+        <% organization_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :orgListID %>
+    <%= form.number_field :orgListID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orgID %>
+    <%= form.number_field :orgID %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

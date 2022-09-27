@@ -10,69 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_18_233752) do
+ActiveRecord::Schema.define(version: 2022_09_21_171703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "administrators", force: :cascade do |t|
-    t.integer "adminID"
-    t.string "name"
-    t.string "email"
-    t.string "role"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "alumnis", force: :cascade do |t|
-    t.integer "alumniID"
-    t.string "name"
-    t.string "email"
-    t.integer "organizationID"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "curr_members", force: :cascade do |t|
-    t.integer "studentID"
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "member_lists", force: :cascade do |t|
-    t.integer "memberListID"
+  create_table "current_members", force: :cascade do |t|
     t.integer "memberID"
+    t.string "name"
+    t.string "email"
+    t.boolean "isAdmin"
+    t.boolean "isAlumni"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "organization_lists", force: :cascade do |t|
-    t.integer "orgListID"
-    t.integer "orgID"
+  create_table "member_orgs", force: :cascade do |t|
+    t.integer "memberOrgID"
+    t.integer "memberID"
+    t.integer "organizationID"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "organizations", force: :cascade do |t|
     t.integer "organizationID"
-    t.string "orgName"
+    t.string "name"
     t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "speaker_lists", force: :cascade do |t|
-    t.integer "speakerListID"
-    t.integer "speakerID"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "speakers", force: :cascade do |t|
     t.integer "speakerID"
-    t.string "speakerName"
+    t.string "name"
     t.string "email"
     t.integer "organizationID"
     t.datetime "created_at", precision: 6, null: false

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Memberid:</strong>
+  <%= @current_member.memberID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @current_member.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @current_member.email %>
+</p>
+
+<p>
+  <strong>Isadmin:</strong>
+  <%= @current_member.isAdmin %>
+</p>
+
+<p>
+  <strong>Isalumni:</strong>
+  <%= @current_member.isAlumni %>
+</p>
+
+<%= link_to 'Edit', edit_current_member_path(@current_member) %> |
+<%= link_to 'Back', current_members_path %>

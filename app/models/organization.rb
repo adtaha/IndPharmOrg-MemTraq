@@ -1,3 +1,3 @@
 class Organization < ApplicationRecord
-    validates :organizationID, :orgName, :email, presence: true
+    validates :organizationID, :name, :email, presence: true
 end

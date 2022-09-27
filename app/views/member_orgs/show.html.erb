@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Memberorgid:</strong>
+  <%= @member_org.memberOrgID %>
+</p>
+
+<p>
+  <strong>Memberid:</strong>
+  <%= @member_org.memberID %>
+</p>
+
+<p>
+  <strong>Organizationid:</strong>
+  <%= @member_org.organizationID %>
+</p>
+
+<%= link_to 'Edit', edit_member_org_path(@member_org) %> |
+<%= link_to 'Back', member_orgs_path %>

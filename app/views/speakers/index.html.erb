@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Speakerid</th>
-      <th>Speakername</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Organizationid</th>
       <th colspan="3"></th>
@@ -17,7 +17,7 @@
     <% @speakers.each do |speaker| %>
       <tr>
         <td><%= speaker.speakerID %></td>
-        <td><%= speaker.speakerName %></td>
+        <td><%= speaker.name %></td>
         <td><%= speaker.email %></td>
         <td><%= speaker.organizationID %></td>
         <td><%= link_to 'Show', speaker %></td>

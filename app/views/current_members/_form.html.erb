@@ -1,0 +1,42 @@
+<%= form_with(model: current_member) do |form| %>
+  <% if current_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(current_member.errors.count, "error") %> prohibited this current_member from being saved:</h2>
+
+      <ul>
+        <% current_member.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :memberID %>
+    <%= form.number_field :memberID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isAdmin %>
+    <%= form.check_box :isAdmin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isAlumni %>
+    <%= form.check_box :isAlumni %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

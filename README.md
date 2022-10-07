@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-Application Description
+This is an application designed to track current and former members of the Industry Pharmacists Organization. It will allow the members to create an account and fill in their information. It should also allow the organization to track industry relations through speakers and alumni careers.
 
 ## Requirements ##
 

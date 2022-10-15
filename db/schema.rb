@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_09_21_171703) do
   enable_extension "plpgsql"
 
   create_table "current_members", force: :cascade do |t|
-    t.integer "memberID"
+    t.string "memberID"
     t.string "name"
     t.string "email"
     t.boolean "isAdmin"

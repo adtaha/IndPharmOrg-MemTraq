@@ -4,9 +4,10 @@ RSpec.describe "speakers/edit", type: :view do
   before(:each) do
     @speaker = assign(:speaker, Speaker.create!(
       speakerID: 1,
-      name: "MyString",
-      email: "MyString",
-      organizationID: 1
+      speakerName: "MyString",
+      speakerEmail: "MyString",
+      organizationName: "MyString",
+      speakerWebsite: "MyString"
     ))
   end
 
@@ -17,11 +18,13 @@ RSpec.describe "speakers/edit", type: :view do
 
       assert_select "input[name=?]", "speaker[speakerID]"
 
-      assert_select "input[name=?]", "speaker[name]"
+      assert_select "input[name=?]", "speaker[speakerName]"
 
-      assert_select "input[name=?]", "speaker[email]"
+      assert_select "input[name=?]", "speaker[speakerEmail]"
 
-      assert_select "input[name=?]", "speaker[organizationID]"
+      assert_select "input[name=?]", "speaker[organizationName]"
+
+      assert_select "input[name=?]", "speaker[speakerWebsite]"
     end
   end
 end

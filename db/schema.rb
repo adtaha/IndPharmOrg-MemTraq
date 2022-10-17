@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2022_09_21_171703) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer "organizationID"
-    t.string "name"
-    t.string "email"
+    t.string "organiationName"
+    t.string "organizationEmail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

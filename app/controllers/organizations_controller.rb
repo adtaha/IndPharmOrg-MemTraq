@@ -3,7 +3,8 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations or /organizations.json
   def index
-    @organizations = Organization.all
+    @q = Organization.ransack(params[:q])
+    @organizations = @q.result(distinct: true)
   end
 
   # GET /organizations/1 or /organizations/1.json
@@ -65,6 +66,8 @@ class OrganizationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def organization_params
-      params.require(:organization).permit(:organizationID, :name, :email)
+      params.require(:organization).permit(:organizationID, :organizationName, :organizationEmail)
+    end
+end
     end
 end

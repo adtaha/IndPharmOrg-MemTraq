@@ -21,9 +21,9 @@
         <td><%= CurrentMember.where(memberID: member_orgs.memberID).last.email %></td>
         <td><%= Organization.where(organizationID: member_orgs.organizationID).last.name %></td>
         <td><%= member_org.organizationID %></td>
-        <td><%= link_to 'Show', member_org %></td>
-        <td><%= link_to 'Edit', edit_member_org_path(member_org) %></td>
-        <td><%= link_to 'Destroy', member_org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Member Organizations', member_org %></td>
+        <td><%= link_to 'Update Member Organizations', edit_member_org_path(member_org) %></td>
+        <td><%= link_to 'Remove Member from an Organization', member_org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,13 +5,13 @@ RSpec.describe "organizations/index", type: :view do
     assign(:organizations, [
       Organization.create!(
         organizationID: 2,
-        organizationName: "Organization Name",
-        organizationEmail: "Organization Email"
+        organizationName: "Name",
+        organizationEmail: "Email"
       ),
       Organization.create!(
         organizationID: 2,
-        organizationName: "Organization Name",
-        organizationEmail: "Organization Email"
+        organizationName: "Name",
+        organizationEmail: "Email"
       )
     ])
   end
@@ -19,7 +19,7 @@ RSpec.describe "organizations/index", type: :view do
   it "renders a list of organizations" do
     render
     assert_select "tr>td", text: 2.to_s, count: 2
-    assert_select "tr>td", text: "Organization Name".to_s, count: 2
-    assert_select "tr>td", text: "Organization Email".to_s, count: 2
+    assert_select "tr>td", text: "Name".to_s, count: 2
+    assert_select "tr>td", text: "Email".to_s, count: 2
   end
 end

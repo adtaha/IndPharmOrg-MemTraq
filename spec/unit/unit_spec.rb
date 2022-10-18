@@ -36,3 +36,29 @@ RSpec.describe CurrentMember, type: :model do
   end
 end
 
+RSpec.describe Organization, type: :model do
+  subject do
+    described_class.new(organizationID: 1, name: "ACME", email: "ACME@email.com")
+  end
+
+  it 'is valid with all valid attributes' do
+    expect(subject).to be_valid
+  end
+
+  it 'is not valid without an organizationID' do
+    subject.organizationID = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a name' do
+    subject.name = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a email' do
+    subject.email = nil
+    expect(subject).not_to be_valid
+  end
+end
+
+

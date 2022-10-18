@@ -25,7 +25,5 @@ RSpec.describe "current_members/index", type: :view do
     assert_select "tr>td", text: 2.to_s, count: 2
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "Email".to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
-    assert_select "tr>td", text: false.to_s, count: 2
   end
 end

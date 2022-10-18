@@ -16,11 +16,14 @@ ActiveRecord::Schema.define(version: 2022_10_16_191039) do
   enable_extension "plpgsql"
 
   create_table "current_members", force: :cascade do |t|
-    t.integer "memberID"
+    t.string "memberID"
     t.string "name"
     t.string "email"
     t.boolean "isAdmin"
     t.boolean "isAlumni"
+    t.string "token"
+    t.string "refresh_token"
+    t.string "oauth_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

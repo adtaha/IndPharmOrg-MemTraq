@@ -153,7 +153,21 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/csce431/test_app/config/environments/test.rb": {
+=======
+      "/csce431/config/spring.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/csce431/config/environments/test.rb": {
+>>>>>>> origin/feature3_Oauth
         "lines": [
           1,
           null,
@@ -340,7 +354,20 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/csce431/test_app/config/initializers/permissions_policy.rb": {
+=======
+      "/csce431/config/initializers/omniauth.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/csce431/config/initializers/permissions_policy.rb": {
+>>>>>>> origin/feature3_Oauth
         "lines": [
           null,
           null,
@@ -382,6 +409,13 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -415,7 +449,49 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/csce431/test_app/spec/helpers/current_members_helper_spec.rb": {
+=======
+      "/csce431/spec/feature/oauth2_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/csce431/spec/helpers/current_members_helper_spec.rb": {
+>>>>>>> origin/feature3_Oauth
         "lines": [
           1,
           null,
@@ -504,7 +580,20 @@
         "lines": [
           1,
           1,
+<<<<<<< HEAD
           1,
+=======
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+>>>>>>> origin/feature3_Oauth
           null
         ]
       },
@@ -1149,7 +1238,11 @@
           null,
           null,
           1,
+<<<<<<< HEAD
           2,
+=======
+          1,
+>>>>>>> origin/feature3_Oauth
           null,
           null,
           null,
@@ -2074,6 +2167,10 @@
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1665986769
+=======
+    "timestamp": 1666057844
+>>>>>>> origin/feature3_Oauth
   }
 }

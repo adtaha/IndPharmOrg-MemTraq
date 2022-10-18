@@ -27,7 +27,7 @@
 
 <p>
   <strong>Speakerwebsite:</strong>
-  <%= @speaker.speakerWebsite %>
+  <%= link_to @speaker.speakerWebsite, "http://#{@speaker.speakerWebsite}" %>
 </p>
 
 <%= link_to 'Edit', edit_speaker_path(@speaker) %> |

@@ -3,7 +3,8 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations or /organizations.json
   def index
-    @organizations = Organization.all
+    @q = Organization.ransack(params[:q])
+    @organizations = @q.result(distinct: true)
   end
 
   # GET /organizations/1 or /organizations/1.json

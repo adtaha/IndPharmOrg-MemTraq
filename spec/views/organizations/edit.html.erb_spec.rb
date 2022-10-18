@@ -4,8 +4,8 @@ RSpec.describe "organizations/edit", type: :view do
   before(:each) do
     @organization = assign(:organization, Organization.create!(
       organizationID: 1,
-      name: "MyString",
-      email: "MyString"
+      organizationName: "MyString",
+      organizationEmail: "MyString"
     ))
   end
 
@@ -16,9 +16,9 @@ RSpec.describe "organizations/edit", type: :view do
 
       assert_select "input[name=?]", "organization[organizationID]"
 
-      assert_select "input[name=?]", "organization[name]"
+      assert_select "input[name=?]", "organization[organizationName]"
 
-      assert_select "input[name=?]", "organization[email]"
+      assert_select "input[name=?]", "organization[organizationEmail]"
     end
   end
 end

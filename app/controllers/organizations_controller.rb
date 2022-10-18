@@ -69,5 +69,3 @@ class OrganizationsController < ApplicationController
       params.require(:organization).permit(:organizationID, :organizationName, :organizationEmail)
     end
 end
-    end
-end

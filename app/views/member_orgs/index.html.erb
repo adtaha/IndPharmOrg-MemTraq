@@ -11,17 +11,20 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Email</th>
       <th>Organizations</th>
       <th colspan="3"></th>
     </tr>
   </thead>
+</center>
 
+<center>
   <tbody>
     <% @member_orgs.each do |member_org| %>
       <tr>
-        <td><%= CurrentMember.where(memberID: member_orgs.memberID).last.name %></td>
-        <td><%= CurrentMember.where(memberID: member_orgs.memberID).last.email %></td>
-        <td><%= Organization.where(organizationID: member_orgs.organizationID).last.name %></td>
+        <td><%= CurrentMember.where(memberID: member_org.memberID).last.name %></td>
+        <td><%= CurrentMember.where(memberID: member_org.memberID).last.email %></td>
+        <td><%= Organization.where(organizationID: member_org.organizationID).last.name %></td>
         <td><%= member_org.organizationID %></td>
         <td><%= link_to 'View Member Organizations', member_org %></td>
         <td><%= link_to 'Update Member Organizations', edit_member_org_path(member_org) %></td>

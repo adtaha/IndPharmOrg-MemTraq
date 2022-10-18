@@ -38,12 +38,12 @@ end
 
 RSpec.describe 'Creating a organization', type: :feature do
   scenario 'valid inputs for an organization' do
-    visit new_current_member_path
-    fill_in 'organizations_organizationID', with: 1
-    fill_in 'Organization Name', with: 'ACME'
-    fill_in 'Organization Email', with: 'ACME@email.com'
+    visit new_organization_path
+    fill_in 'organization_organizationID', with: 1
+    fill_in 'Name', with: 'ACME'
+    fill_in 'Email', with: 'ACME@email.com'
     click_on 'Create Organization'
-    visit current_members_path
+    visit organizations_path
     expect(page).to have_content(1)
     expect(page).to have_content('ACME')
     expect(page).to have_content('ACME@email.com')

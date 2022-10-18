@@ -5,13 +5,13 @@ RSpec.describe "organizations/index", type: :view do
     assign(:organizations, [
       Organization.create!(
         organizationID: 2,
-        organizationName: "Name",
-        organizationEmail: "Email"
+        name: "Name",
+        email: "Email"
       ),
       Organization.create!(
         organizationID: 2,
-        organizationName: "Name",
-        organizationEmail: "Email"
+        name: "Name",
+        email: "Email"
       )
     ])
   end

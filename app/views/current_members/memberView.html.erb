@@ -1,0 +1,40 @@
+
+
+<h1>Current Members</h1>
+
+<p>Here is a list of current members in the organization. Click on individual profiles to get further details about an organization member.
+You can use this page as a great way to network and get to know other members.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Member ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Admin Status</th>
+      <th>Alumni Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @current_members.each do |current_member| %>
+      <tr>
+        <td><%= current_member.memberID %></td>
+        <td><%= current_member.name %></td>
+        <td><%= current_member.email %></td>
+        <td><%= current_member.isAdmin %></td>
+        <td><%= current_member.isAlumni %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Organization Info', new_member_org_path %>
+
+<br>
+
+<%= link_to 'Current Members (Officer View)', current_members_path %>
+

@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe CurrentMember, type: :model do
   subject do
-    described_class.new(memberID: 1, name: "John Doe", email: "johndoe@email.com", isAdmin: false, isAlumni: false)
+    described_class.new(memberID: 1, name: "John Doe", email: "johndoe@email.com", isAdmin: true, isAlumni: true)
+    described_class.new(memberID: 1, name: "Jane Doe", email: "janedoe@email.com", isAdmin: false, isAlumni: false)
   end
 
   it 'is valid with all valid attributes' do

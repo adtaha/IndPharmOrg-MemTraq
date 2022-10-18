@@ -6,6 +6,10 @@ class CurrentMembersController < ApplicationController
     @current_members = CurrentMember.all
   end
 
+  def memberView
+    @current_members = CurrentMember.all
+  end
+
   # GET /current_members/1 or /current_members/1.json
   def show
   end

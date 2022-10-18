@@ -1,4 +1,4 @@
 class Organization < ApplicationRecord
     validates :organizationID, uniqueness: true, presence: true
-    validates :organizationName, :organizationEmail, presence: true
+    validates :name, :email, presence: true
 end

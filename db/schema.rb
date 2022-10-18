@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_171703) do
+ActiveRecord::Schema.define(version: 2022_10_16_191039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(version: 2022_09_21_171703) do
 
   create_table "speakers", force: :cascade do |t|
     t.integer "speakerID"
-    t.string "name"
-    t.string "email"
-    t.integer "organizationID"
+    t.string "speakerName"
+    t.string "speakerEmail"
+    t.date "dateSpoke"
+    t.string "organizationName"
+    t.string "speakerWebsite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :speakers
+  resources :speakers
   resources :organizations
   resources :member_orgs
   resources :current_members

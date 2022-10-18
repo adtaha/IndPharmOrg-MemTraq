@@ -3,7 +3,8 @@ class SpeakersController < ApplicationController
 
   # GET /speakers or /speakers.json
   def index
-    @speakers = Speaker.all
+    @q = Speaker.ransack(params[:q])
+    @speakers = @q.result(distinct: true)
   end
 
   # GET /speakers/1 or /speakers/1.json
@@ -65,6 +66,6 @@ class SpeakersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def speaker_params
-      params.require(:speaker).permit(:speakerID, :name, :email, :organizationID)
+      params.require(:speaker).permit(:speakerID, :speakerName, :speakerEmail, :dateSpoke, :organizationName, :speakerWebsite)
     end
 end

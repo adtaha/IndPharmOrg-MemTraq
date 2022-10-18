@@ -1,37 +1,33 @@
 require 'rails_helper'
 
-RSpec.describe CurrentMember, type: :model do
+RSpec.describe Speaker, type: :model do
   subject do
-    described_class.new(memberID: 1, name: "John Doe", email: "johndoe@email.com", isAdmin: false, isAlumni: false)
+    described_class.new(speakerID: 1, speakerName: "John Doe", speakerEmail: "johndoe@email.com", dateSpoke: 20221017, organizationName: "johndoe", speakerWebsite: "www.google.com")
   end
 
   it 'is valid with all valid attributes' do
     expect(subject).to be_valid
   end
 
-  it 'is not valid without a memberID' do
-    subject.memberID = nil
+  it 'is not valid without a ID' do
+    subject.speakerID = nil
     expect(subject).not_to be_valid
   end
 
   it 'is not valid without a name' do
-    subject.name = nil
+    subject.speakerName = nil
     expect(subject).not_to be_valid
   end
 
   it 'is not valid without a email' do
-    subject.email = nil
+    subject.speakerEmail = nil
     expect(subject).not_to be_valid
   end
 
-  it 'is not valid without being either an admin or not an admin' do
-    subject.isAdmin = nil
+  it 'is not valid without a dateSpoke' do
+    subject.dateSpoke = nil
     expect(subject).not_to be_valid
   end
 
-  it 'is not valid without being either an alumni or not an alumni' do
-    subject.isAlumni = nil
-    expect(subject).not_to be_valid
-  end
 end
 

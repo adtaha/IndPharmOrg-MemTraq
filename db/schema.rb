@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2022_09_21_171703) do
     t.string "email"
     t.boolean "isAdmin"
     t.boolean "isAlumni"
+    t.string "token"
+    t.string "refresh_token"
+    t.string "oauth_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

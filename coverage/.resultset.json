@@ -136,6 +136,16 @@
           1
         ]
       },
+      "/csce431/config/spring.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/csce431/config/environments/test.rb": {
         "lines": [
           1,
@@ -323,6 +333,15 @@
           null
         ]
       },
+      "/csce431/config/initializers/omniauth.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
       "/csce431/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
@@ -365,6 +384,13 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -395,6 +421,44 @@
       "/csce431/app/helpers/speakers_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/csce431/spec/feature/oauth2_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
           null
         ]
       },
@@ -487,6 +551,16 @@
         "lines": [
           1,
           1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
           null
         ]
       },
@@ -1131,7 +1205,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null,
@@ -2055,6 +2129,6 @@
         ]
       }
     },
-    "timestamp": 1663814865
+    "timestamp": 1666057844
   }
 }

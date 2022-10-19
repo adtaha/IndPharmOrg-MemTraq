@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first
 
 CurrentMember.create!([
-    {memberID: 1, name: "Link", email: "link@hyrule.com", isAdmin: true, isAlumni: true}
+    {memberID: "1", name: "Link", email: "link@hyrule.com", isAdmin: true, isAlumni: true}
 ])
 
 Organization.create!([
@@ -15,5 +15,5 @@ Organization.create!([
 ])
 
 Speaker.create!([
-    {speakerID: 1, name: "Bolson", email: "bolson@bolsonconstruction.org", organizationID: 1}
+    {speakerID: 1, speakerName: "Bolson", speakerEmail: "bolson@bolsonconstruction.org", organizationName: 1, dateSpoke: "10/19/22", organizationName: "Bolson Construction", speakerWebsite: "bolsonconstruction.org"}
 ])

@@ -15,5 +15,5 @@ Organization.create!([
 ])
 
 Speaker.create!([
-    {speakerID: 1, speakerName: "Bolson", speakerEmail: "bolson@bolsonconstruction.org", dateSpoke: "10/19/22", organizationName: "Bolson Construction", speakerWebsite: "bolsonconstruction.org"}
+    {speakerID: 1, speakerName: "Bolson", speakerEmail: "bolson@bolsonconstruction.org", dateSpoke: Date.parse('2022-10-19','%Y-%m-%d'), organizationName: "Bolson Construction", speakerWebsite: "bolsonconstruction.org"}
 ])

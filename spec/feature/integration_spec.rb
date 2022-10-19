@@ -48,5 +48,4 @@ RSpec.describe 'Creating a organization', type: :feature do
     expect(page).to have_content('ACME')
     expect(page).to have_content('ACME@email.com')
   end
-
 end

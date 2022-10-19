@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # IndPharmOrg-MemTraq
 =======
 # README

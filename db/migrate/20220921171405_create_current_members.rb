@@ -6,9 +6,9 @@ class CreateCurrentMembers < ActiveRecord::Migration[6.1]
       t.string :email
       t.boolean :isAdmin
       t.boolean :isAlumni
-      t.string :token
-      t.string :refresh_token
-      t.string :oauth_expires_at
+      # t.string :token
+      # t.string :refresh_token
+      # t.string :oauth_expires_at
 
       t.timestamps
     end

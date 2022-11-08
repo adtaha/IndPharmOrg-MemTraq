@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_21_171703) do
+ActiveRecord::Schema.define(version: 2022_11_08_013450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
 
   create_table "current_members", force: :cascade do |t|
     t.string "memberID"
@@ -21,9 +31,6 @@ ActiveRecord::Schema.define(version: 2022_09_21_171703) do
     t.string "email"
     t.boolean "isAdmin"
     t.boolean "isAlumni"
-    t.string "token"
-    t.string "refresh_token"
-    t.string "oauth_expires_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

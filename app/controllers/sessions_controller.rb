@@ -13,14 +13,14 @@
 #     redirect_to root_path
 #   end
 
-class SessionsController < ApplicationController
-     def omniauth
-          member = CurrentMember.from_omniauth(request.env['omniauth.auth'])
-          if member.valid?
-               session[:member_id] = member.memberID
-               redirect_to(user_path(member))
-          else
-               redirect_to('/login')
-          end
-     end
-end
+# class SessionsController < ApplicationController
+#      def omniauth
+#           member = CurrentMember.from_omniauth(request.env['omniauth.auth'])
+#           if member.valid?
+#                session[:member_id] = member.memberID
+#                redirect_to(user_path(member))
+#           else
+#                redirect_to('/login')
+#           end
+#      end
+# end

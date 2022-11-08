@@ -1,3 +1,5 @@
+# IndPharmOrg-MemTraq
+=======
 # README
 
 ## Introduction ##
@@ -71,3 +73,4 @@ TBD
 
 Admins looking for support should first look at the application help page.
 Users looking for help seek out assistance from the customer.
+>>>>>>> origin/feature3_Oauth

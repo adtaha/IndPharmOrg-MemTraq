@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Current Members</h1>
+<%= link_to "Log in with Google", '/auth/google_oauth2'  %>
 
+<center><h1>Current Members</h1></center>
+
+<center>
 <table>
   <thead>
     <tr>
-      <th>Memberid</th>
+      <th>Member ID</th>
       <th>Name</th>
       <th>Email</th>
-      <th>Isadmin</th>
-      <th>Isalumni</th>
+      <th>Admin Status</th>
+      <th>Alumni Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
+</center>
 
+<enter>
   <tbody>
     <% @current_members.each do |current_member| %>
       <tr>
@@ -22,14 +27,35 @@
         <td><%= current_member.email %></td>
         <td><%= current_member.isAdmin %></td>
         <td><%= current_member.isAlumni %></td>
-        <td><%= link_to 'Show', current_member %></td>
-        <td><%= link_to 'Edit', edit_current_member_path(current_member) %></td>
-        <td><%= link_to 'Destroy', current_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View Member Info', current_member %></td>
+        <td><%= link_to 'Update Member Info', edit_current_member_path(current_member) %></td>
+        <td><%= link_to 'Remove Member', current_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</center>
+
+
+<br>
+<center>
+<%= link_to 'Add New Member', new_current_member_path %>
+</center>
 
 <br>
 
-<%= link_to 'New Current Member', new_current_member_path %>
+<center>
+<%= link_to 'View Member Organizations', member_orgs_path %>
+</center>
+
+<br>
+
+<center>
+<%= link_to 'Add Organization Info', new_member_org_path %>
+</center>
+
+<br>
+
+
+
+

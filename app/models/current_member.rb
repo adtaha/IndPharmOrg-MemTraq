@@ -1,8 +1,10 @@
 class CurrentMember < ApplicationRecord
-    validates :memberID, :name, :email, :isAdmin, :isAlumni, presence: true
+     has_many :organizations, through: :member_orgs
 
      validates :memberID, :name, :email, presence: true
      validates :isAdmin, :isAlumni, inclusion: { in: [true, false] }
+
+
 
      # def self.from_omniauth(response)
      #      CurrentMember.find_or_create_by(memberID: response[:uid]) do |u|

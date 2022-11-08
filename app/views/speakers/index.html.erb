@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Log in with Google", '/auth/google_oauth2'  %>
+
 <h1>Speakers</h1>
 
+<%= render 'speakers/search_form.html.erb' %>
 <table>
   <thead>
     <tr>
-      <th>Speakerid</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Organizationid</th>
+      <th><%= sort_link(@q, :speakerID, "Speaker ID", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :speakerName, "Speaker Name", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :dateSpoke, "Date Spoke", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :organizationName, "Organization Name", default_order: :asc) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +20,9 @@
     <% @speakers.each do |speaker| %>
       <tr>
         <td><%= speaker.speakerID %></td>
-        <td><%= speaker.name %></td>
-        <td><%= speaker.email %></td>
-        <td><%= speaker.organizationID %></td>
+        <td><%= speaker.speakerName %></td>
+        <td><%= speaker.dateSpoke %></td>
+        <td><%= speaker.organizationName %></td>
         <td><%= link_to 'Show', speaker %></td>
         <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
         <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,3 +34,15 @@
 <br>
 
 <%= link_to 'New Speaker', new_speaker_path %>
+
+<br>
+
+<%= link_to 'View Current Members', current_members_path %>
+
+<br>
+
+<%= link_to 'View Member Orgs', member_orgs_path %>
+
+<br>
+
+<%= link_to 'View Organizations', organizations_path %>

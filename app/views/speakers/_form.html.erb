@@ -17,18 +17,28 @@
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :speakerName %>
+    <%= form.text_field :speakerName %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :speakerEmail %>
+    <%= form.text_field :speakerEmail %>
   </div>
 
   <div class="field">
-    <%= form.label :organizationID %>
-    <%= form.number_field :organizationID %>
+    <%= form.label :dateSpoke %>
+    <%= form.date_select :dateSpoke %>
+  </div>
+
+  <div class="field">
+    <%= form.label :organizationName %>
+    <%= form.text_field :organizationName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speakerWebsite %>
+    <%= form.text_field :speakerWebsite %>
   </div>
 
   <div class="actions">

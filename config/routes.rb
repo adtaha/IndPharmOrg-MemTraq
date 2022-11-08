@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'admins/sign_out', to: 'admins/sessions#destroy', as: :destroy_admin_session
     end
   resources :speakers
+  resources :speakers
   resources :organizations
   resources :member_orgs
   resources :current_members

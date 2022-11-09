@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'dashboards#show'
+  root to: 'current_members#index'
   devise_for :current_members, controllers: { omniauth_callbacks: 'current_members/omniauth_callbacks' }
   devise_scope :current_member do
     get 'current_members/sign_in', to: 'current_members/sessions#new', as: :new_current_member_session

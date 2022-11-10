@@ -4,8 +4,8 @@ RSpec.describe "organizations/show", type: :view do
   before(:each) do
     @organization = assign(:organization, Organization.create!(
       organizationID: 2,
-      organizationName: "Organization Name",
-      organizationEmail: "Organization Email"
+      name: "Organization Name",
+      email: "Organization Email"
     ))
   end
 

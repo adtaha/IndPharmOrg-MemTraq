@@ -4,8 +4,8 @@ RSpec.describe "organizations/new", type: :view do
   before(:each) do
     assign(:organization, Organization.new(
       organizationID: 1,
-      organizationName: "MyString",
-      organizationEmail: "MyString"
+      name: "MyString",
+      email: "MyString"
     ))
   end
 
@@ -16,9 +16,9 @@ RSpec.describe "organizations/new", type: :view do
 
       assert_select "input[name=?]", "organization[organizationID]"
 
-      assert_select "input[name=?]", "organization[organizationName]"
+      assert_select "input[name=?]", "organization[name]"
 
-      assert_select "input[name=?]", "organization[organizationEmail]"
+      assert_select "input[name=?]", "organization[email]"
     end
   end
 end

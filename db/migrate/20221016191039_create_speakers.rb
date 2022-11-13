@@ -4,8 +4,7 @@ class CreateSpeakers < ActiveRecord::Migration[6.1]
       t.integer :speakerID
       t.string :speakerName
       t.string :speakerEmail
-      t.date :dateSpoke
-      t.string :organizationName
+      t.string :organizationID
       t.string :speakerWebsite
 
       t.timestamps

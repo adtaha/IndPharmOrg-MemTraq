@@ -66,6 +66,6 @@ class SpeakersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def speaker_params
-      params.require(:speaker).permit(:speakerID, :speakerName, :speakerEmail, :dateSpoke, :organizationName, :speakerWebsite)
+      params.require(:speaker).permit(:speakerID, :speakerName, :speakerEmail, :organizationID, :speakerWebsite)
     end
 end

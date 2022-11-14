@@ -25,17 +25,21 @@
         <td><%= speaker.dateSpoke %></td>
         <td><%= speaker.organizationName %></td>
         <td><%= link_to 'Show', speaker %></td>
-        <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_current_member.isAdmin %>
+          <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
+          <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<%if current_current_member.isAdmin %>
 <br>
+  <%= link_to 'New Speaker', new_speaker_path %>
 
-<%= link_to 'New Speaker', new_speaker_path %>
-
+<br>
+<% end %>
 <br>
 
 <%= link_to 'View Current Members', current_members_path %>

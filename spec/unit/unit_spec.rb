@@ -60,3 +60,28 @@ RSpec.describe(Organization, type: :model) do
           expect(subject).not_to(be_valid)
      end
 end
+
+RSpec.describe Speaker, type: :model do
+  subject do
+    described_class.new(speakerID: 1, speakerName: "John Doe", speakerEmail: "johndoe@email.com", organizationID: 1, speakerWebsite: "www.google.com")
+  end
+
+  it 'is valid with all valid attributes' do
+    expect(subject).to be_valid
+  end
+
+  it 'is not valid without a ID' do
+    subject.speakerID = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a name' do
+    subject.speakerName = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a email' do
+    subject.speakerEmail = nil
+    expect(subject).not_to be_valid
+  end
+end

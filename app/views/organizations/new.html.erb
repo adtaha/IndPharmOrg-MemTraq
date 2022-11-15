@@ -1,5 +1,9 @@
 <h1>New Organization</h1>
 
-<%= render 'form', organization: @organization %>
+<% if current_current_member.isAdmin %>
+    <%= render 'form', organization: @organization %>
+<% else %>
+    <h2>You must be an admin to add new organization</h2>
+<% end %>
 
 <%= link_to 'Back', organizations_path %>

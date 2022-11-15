@@ -58,13 +58,10 @@ class SpeakersController < ApplicationController
 
      private
 
-     # Use callbacks to share common setup or constraints between actions.
-     def set_speaker
-          @speaker = Speaker.find(params[:id])
-     end
 
-     # Only allow a list of trusted parameters through.
-     def speaker_params
-          params.require(:speaker).permit(:speakerID, :speakerName, :speakerEmail, :dateSpoke, :organizationName, :speakerWebsite)
-     end
+    # Only allow a list of trusted parameters through.
+    def speaker_params
+      params.require(:speaker).permit(:speakerID, :speakerName, :speakerEmail, :organizationID, :speakerWebsite)
+    end
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_16_191039) do
+ActiveRecord::Schema.define(version: 2022_11_11_220945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2022_10_16_191039) do
   create_table "current_members", force: :cascade do |t|
     t.string "memberID"
     t.string "name"
-    t.string "email"
+    t.string "email", null: false
     t.boolean "isAdmin"
     t.boolean "isAlumni"
-    t.string "token"
-    t.string "refresh_token"
-    t.string "oauth_expires_at"
+    t.string "avatar_url"
+    t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_current_members_on_email", unique: true
   end
 
   create_table "member_orgs", force: :cascade do |t|
@@ -48,8 +48,7 @@ ActiveRecord::Schema.define(version: 2022_10_16_191039) do
     t.integer "speakerID"
     t.string "speakerName"
     t.string "speakerEmail"
-    t.date "dateSpoke"
-    t.string "organizationName"
+    t.string "organizationID"
     t.string "speakerWebsite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Log in with Google", '/auth/google_oauth2'  %>
+<%= link_to "Sign Out", destroy_current_member_session_path %>
+<%= current_current_member.name %>
 
 <h1>Organizations</h1>
 
@@ -13,6 +14,7 @@
     </tr>
   </thead>
 
+<center>
   <tbody>
     <% @organizations.each do |organization| %>
       <tr>
@@ -20,17 +22,22 @@
         <td><%= organization.name %></td>
         <td><%= organization.email %></td>
         <td><%= link_to 'Show', organization %></td>
-        <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-        <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_current_member.isAdmin %>
+          <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
+          <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</center>
 
-<br>
+<% if current_current_member.isAdmin %>
+  <br>
 
-<%= link_to 'New Organization', new_organization_path %>
-
+  <%= link_to 'New Organization', new_organization_path %>
+  <br>
+<% end %>
 
 <br>
 

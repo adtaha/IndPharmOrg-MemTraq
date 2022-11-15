@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first
 
 CurrentMember.where([
-     { memberID: '1', name: 'Link', email: 'link@hyrule.com', isAdmin: true, isAlumni: true },
-     { memberID: '2', name: 'Juan', email: 'juanchavez@tamu.edu', isAdmin: true, isAlumni: false },
-     { memberID: '3', name: 'Juan', email: 'juanchavez13134@gmail.com', isAdmin: false, isAlumni: false }
+     { memberID: 1, name: 'Link', email: 'link@hyrule.com', isAdmin: true, isAlumni: true },
+     { memberID: 2, name: 'Juan', email: 'juanchavez@tamu.edu', isAdmin: true, isAlumni: false },
+     { memberID: 3, name: 'Juan', email: 'juanchavez13134@gmail.com', isAdmin: false, isAlumni: false }
 ]).first_or_create
 
 Organization.create!([
@@ -21,8 +21,7 @@ Speaker.create!([
           speakerID: 1,
           speakerName: 'Bolson',
           speakerEmail: 'bolson@bolsonconstruction.org',
-          dateSpoke: Date.parse('2022-10-19', '%Y-%m-%d'),
-          organizationName: 'Bolson Construction',
+          organizationID: 1,
           speakerWebsite: 'bolsonconstruction.org'
      }
 ])

@@ -11,8 +11,7 @@
     <tr>
       <th><%= sort_link(@q, :speakerID, "Speaker ID", default_order: :asc) %></th>
       <th><%= sort_link(@q, :speakerName, "Speaker Name", default_order: :asc) %></th>
-      <th><%= sort_link(@q, :dateSpoke, "Date Spoke", default_order: :asc) %></th>
-      <th><%= sort_link(@q, :organizationName, "Organization Name", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :organizationID, "Organization ID", default_order: :asc) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +21,7 @@
       <tr>
         <td><%= speaker.speakerID %></td>
         <td><%= speaker.speakerName %></td>
-        <td><%= speaker.dateSpoke %></td>
-        <td><%= speaker.organizationName %></td>
+        <td><%= speaker.organizationID %></td>
         <td><%= link_to 'Show', speaker %></td>
         <% if current_current_member.isAdmin %>
           <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
@@ -37,9 +35,14 @@
 <%if current_current_member.isAdmin %>
 <br>
   <%= link_to 'New Speaker', new_speaker_path %>
-
 <br>
 <% end %>
+
+<p>
+  <strong>Speaker Media:</strong>
+  <%= link_to 'Speaker Media Drive', "https://drive.google.com/drive/folders/0AIjRbzQwq4TfUk9PVA" %>
+</p>
+
 <br>
 
 <%= link_to 'View Current Members', current_members_path %>

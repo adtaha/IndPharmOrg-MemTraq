@@ -16,18 +16,13 @@
 </p>
 
 <p>
-  <strong>Datespoke:</strong>
-  <%= @speaker.dateSpoke %>
-</p>
-
-<p>
-  <strong>Organizationname:</strong>
-  <%= @speaker.organizationName %>
+  <strong>OrganizationID:</strong>
+  <%= @speaker.organizationID %>
 </p>
 
 <p>
   <strong>Speakerwebsite:</strong>
-  <%= @speaker.speakerWebsite %>
+  <%= link_to @speaker.speakerWebsite, "http://#{@speaker.speakerWebsite}" %>
 </p>
 
 <%= link_to 'Edit', edit_speaker_path(@speaker) %> |

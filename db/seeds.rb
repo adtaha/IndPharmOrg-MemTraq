@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first
 
-CurrentMember.create!([
+CurrentMember.where!([
      { memberID: '1', name: 'Link', email: 'link@hyrule.com', isAdmin: true, isAlumni: true },
      { memberID: '2', name: 'Juan', email: 'juanchavez@tamu.edu', isAdmin: true, isAlumni: false },
      { memberID: '3', name: 'Juan', email: 'juanchavez13134@gmail.com', isAdmin: false, isAlumni: false }
-])
+]).first_or_create
 
 Organization.create!([
      { organizationID: 1, name: 'Bolson Construction', email: 'recruit@bolsonconstruction.org' }

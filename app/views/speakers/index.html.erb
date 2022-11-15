@@ -23,25 +23,25 @@
         <td><%= speaker.speakerName %></td>
         <td><%= speaker.organizationID %></td>
         <td><%= link_to 'Show', speaker %></td>
-        <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-        <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_current_member.isAdmin %>
+          <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
+          <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<%if current_current_member.isAdmin %>
 <br>
+  <%= link_to 'New Speaker', new_speaker_path %>
+<br>
+<% end %>
 
 <p>
   <strong>Speaker Media:</strong>
   <%= link_to 'Speaker Media Drive', "https://drive.google.com/drive/folders/0AIjRbzQwq4TfUk9PVA" %>
 </p>
-
-<br>
-
-<br>
-
-<%= link_to 'New Speaker', new_speaker_path %>
 
 <br>
 

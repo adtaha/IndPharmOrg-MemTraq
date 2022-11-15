@@ -1,3 +1,6 @@
 class Organization < ApplicationRecord
-    validates :organizationID, :name, :email, presence: true
+     has_many :current_members, through: :member_orgs
+
+     validates :organizationID, presence: true
+     validates :name, :email, presence: true
 end

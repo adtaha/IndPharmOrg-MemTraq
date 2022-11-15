@@ -1,13 +1,17 @@
 class CreateCurrentMembers < ActiveRecord::Migration[6.1]
   def change
     create_table :current_members do |t|
-      t.integer :memberID
+      t.string :memberID
       t.string :name
-      t.string :email
+      t.string :email, null: false
       t.boolean :isAdmin
       t.boolean :isAlumni
-
-      t.timestamps
+      t.string :avatar_url
+      t.string :uid
+      
+      t.timestamps null: false
     end
+
+    add_index :current_members, :email, unique: true
   end
 end

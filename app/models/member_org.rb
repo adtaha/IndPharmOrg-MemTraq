@@ -1,4 +1,4 @@
 class MemberOrg < ApplicationRecord
-    belongs_to :current_member
-    belongs_to :organization
+     belongs_to :current_member, foreign_key: "memberID"
+     belongs_to :organization, foreign_key: "organizationID"
 end

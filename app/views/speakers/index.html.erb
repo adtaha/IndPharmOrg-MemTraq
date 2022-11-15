@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Sign Out", destroy_current_member_session_path %>
+<%= current_current_member.name %>
+
 <h1>Speakers</h1>
 
 <%= render 'speakers/search_form.html.erb' %>

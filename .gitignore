@@ -34,3 +34,14 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+<<<<<<< HEAD
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+=======
+.env
+>>>>>>> origin/feature3_Oauth

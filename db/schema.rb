@@ -16,13 +16,16 @@ ActiveRecord::Schema.define(version: 2022_11_11_220945) do
   enable_extension "plpgsql"
 
   create_table "current_members", force: :cascade do |t|
-    t.integer "memberID"
+    t.string "memberID"
     t.string "name"
-    t.string "email"
+    t.string "email", null: false
     t.boolean "isAdmin"
     t.boolean "isAlumni"
+    t.string "avatar_url"
+    t.string "uid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_current_members_on_email", unique: true
   end
 
   create_table "member_orgs", force: :cascade do |t|

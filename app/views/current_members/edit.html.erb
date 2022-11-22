@@ -1,6 +1,9 @@
 <h1>Editing Current Member</h1>
-
-<%= render 'form', current_member: @current_member %>
+<% if current_current_member.isAdmin %>
+    <%= render 'form', current_member: @current_member %>
+<% else %>
+    <h2> You must be an admin to edit members </h2>
+<% end %>
 
 <%= link_to 'Show', @current_member %> |
 <%= link_to 'Back', current_members_path %>

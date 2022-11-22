@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to "Log in with Google", '/auth/google_oauth2'  %>
+<%= link_to "Sign Out", destroy_current_member_session_path %>
+<%= current_current_member.name %>
 
 <center><h1>Current Members</h1></center>
 
@@ -18,7 +19,7 @@
   </thead>
 </center>
 
-<enter>
+<center>
   <tbody>
     <% @current_members.each do |current_member| %>
       <tr>
@@ -28,19 +29,23 @@
         <td><%= current_member.isAdmin %></td>
         <td><%= current_member.isAlumni %></td>
         <td><%= link_to 'View Member Info', current_member %></td>
-        <td><%= link_to 'Update Member Info', edit_current_member_path(current_member) %></td>
-        <td><%= link_to 'Remove Member', current_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_current_member.isAdmin %>
+          <td><%= link_to 'Update Member Info', edit_current_member_path(current_member) %></td>
+          <td><%= link_to 'Remove Member', current_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 </center>
 
+<% if current_current_member.isAdmin %>
+  <br>
+  <center>
+  <%= link_to 'Add New Member', new_current_member_path %>
+  </center>
 
-<br>
-<center>
-<%= link_to 'Add New Member', new_current_member_path %>
-</center>
+<% end %>
 
 <br>
 
@@ -56,6 +61,6 @@
 
 <br>
 
-
-
-
+<center>
+<%= link_to 'View Speakers', speakers_path %>
+</center>

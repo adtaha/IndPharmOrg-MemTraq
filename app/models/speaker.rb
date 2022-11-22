@@ -1,4 +1,4 @@
 class Speaker < ApplicationRecord
-    validates :speakerID, presence: true
-    validates :speakerName, :speakerEmail, :dateSpoke, presence: true
+    validates :speakerID, uniqueness: true, presence: true
+    validates :speakerName, :speakerEmail, :organizationID, presence: true
 end

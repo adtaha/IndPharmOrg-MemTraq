@@ -1,16 +1,13 @@
 class CurrentMember < ApplicationRecord
-    has_many :organizations, through: :member_orgs
+     # Include default devise modules. Others available are:
+     # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+     devise :omniauthable, omniauth_providers: [:google_oauth2]
+     has_many :organizations, through: :member_orgs
 
-    validates :memberID, :name, :email, presence: true
-    validates_inclusion_of :isAdmin, :isAlumni, :in => [true, false]
-
-    def self.from_omniauth(response)
-        CurrentMember.find_or_create_by(memberID: response[:uid]) do |u|
-            u.name = response[:info][:name]
-            u.email = response[:info][:email]
-            u.token = response[:info][:token]
-            u.refresh_token = response[:info][:refresh_token]
-            u.oauth_expires_at = response[:info][:oauth_expires_at]
-        end
-    end
+     # validates :memberID, :name, :email, presence: true
+     # validates :isAdmin, :isAlumni, inclusion: { in: [true, false] }
+     def self.from_google(email:, name:, uid:, avatar_url:)
+          return nil unless email =~ /@tamu.edu\z/
+          create_with(uid: uid, name: name, avatar_url: avatar_url).find_or_create_by!(email: email)
+     end
 end

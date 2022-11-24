@@ -6,7 +6,7 @@ RSpec.describe('speakers/new', type: :view) do
                                 speakerID: 1,
                                 speakerName: 'MyString',
                                 speakerEmail: 'MyString',
-                                organizationName: 'MyString',
+                                organizationID: 1,
                                 speakerWebsite: 'MyString'
                            )
           )
@@ -22,7 +22,7 @@ RSpec.describe('speakers/new', type: :view) do
 
                assert_select 'input[name=?]', 'speaker[speakerEmail]'
 
-               assert_select 'input[name=?]', 'speaker[organizationName]'
+               assert_select 'input[name=?]', 'speaker[organizationID]'
 
                assert_select 'input[name=?]', 'speaker[speakerWebsite]'
           end

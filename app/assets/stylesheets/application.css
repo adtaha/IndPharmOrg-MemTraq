@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.flash__alert   { color: red; }
+.flash__notice  { color: blue; }
+.flash__success { color: green; }
+
+ .navbar-dark {
+    background:#500000;
+  }
+
+  

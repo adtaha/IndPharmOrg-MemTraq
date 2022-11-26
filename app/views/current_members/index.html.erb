@@ -40,11 +40,12 @@
 <% if current_current_member.isAdmin %>
   <br>
   <center>
-  <%= link_to 
-    <a class="c-button c-button_maroon-ghost-reverse">
-    Add New Member
-    </a>, 
-  new_current_member_path %>
+  <%= button_to 
+  'Add New Member'
+  new_current_member_path,
+  :class => "c-button c-button_maroon-ghost-reverse",
+  :method => :get
+  %>
   </center>
 
 <% end %>
@@ -52,11 +53,12 @@
 <br>
 
 <center>
-<%= link_to 
-  <a class="c-button c-button_maroon-ghost-reverse">
-  View Member Organizations
-  </a>, 
-member_orgs_path %>
+<%= button_to
+  'View Member Organizations',
+  member_orgs_path,
+  :class => "c-button c-button_maroon-ghost-reverse",
+  :method => :get
+  %>
 </center>
 
 <br>

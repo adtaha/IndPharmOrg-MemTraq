@@ -1,29 +1,31 @@
 // Place all the styles related to the CurrentMembers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 .c-button {
-    display: inline-block;
-    margin: 0;
-    padding-top: 1rem;
-    padding-right: 1.875rem;
-    padding-bottom: 1rem;
-    padding-left: 1.875rem;
-    transition: 0.3s ease-in-out;
-    border-width: 3px;
-    border-style: solid;
-    font-family: $open-sans;  
-    font-weight: 700;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    margin: 1rem; /* presentation purposes only */
-  }
+   display: inline-block;
+   margin: 0;
+   padding-top: 1rem;
+   padding-right: 1.875rem;
+   padding-bottom: 1rem;
+   padding-left: 1.875rem;
+   transition: 0.3s ease-in-out;
+   border-width: 3px;
+   border-style: solid;
+   font-family: $open-sans;  
+   font-weight: 700;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   margin: 1rem; /* presentation purposes only */
+ }
 .c-button_maroon-ghost-reverse {
-    background-color: $maroon;
-    border-color: $maroon;
-    color: $white;
-  }
+   background-color: $maroon;
+   border-color: $maroon;
+   color: $white;
+ }
 .c-button_maroon-ghost-reverse:hover {
-    background-color: transparent;
-    color: $maroon;
-  }
+   background-color: transparent;
+   color: $maroon;
+ }

@@ -9,7 +9,6 @@
 <table>
   <thead>
     <tr>
-      <th>Member ID</th>
       <th>Name</th>
       <th>Email</th>
       <th>Admin Status</th>
@@ -23,7 +22,6 @@
   <tbody>
     <% @current_members.each do |current_member| %>
       <tr>
-        <td><%= current_member.memberID %></td>
         <td><%= current_member.name %></td>
         <td><%= current_member.email %></td>
         <td><%= current_member.isAdmin %></td>
@@ -42,7 +40,11 @@
 <% if current_current_member.isAdmin %>
   <br>
   <center>
-  <%= link_to 'Add New Member', new_current_member_path %>
+  <%= link_to 
+    <a class="c-button c-button_maroon-ghost-reverse">
+    Add New Member
+    </a>, 
+  new_current_member_path %>
   </center>
 
 <% end %>
@@ -50,7 +52,11 @@
 <br>
 
 <center>
-<%= link_to 'View Member Organizations', member_orgs_path %>
+<%= link_to 
+  <a class="c-button c-button_maroon-ghost-reverse">
+  View Member Organizations
+  </a>, 
+member_orgs_path %>
 </center>
 
 <br>

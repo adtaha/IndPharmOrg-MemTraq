@@ -29,7 +29,6 @@
         <td><%= CurrentMember.where(memberID: member_org.memberID).last.name %></td>
         <td><%= CurrentMember.where(memberID: member_org.memberID).last.email %></td>
         <td><%= Organization.where(organizationID: member_org.organizationID).last.name %></td>
-        <td><%= member_org.organizationID %></td>
         <td><%= link_to 'View', member_org, class: "c-button c-button_maroon-ghost-reverse" %></td>
         <% if current_current_member.isAdmin %>
           <td><%= link_to 'Update', edit_member_org_path(member_org), class: "c-button c-button_maroon-ghost-reverse" %></td>

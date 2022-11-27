@@ -3,9 +3,10 @@
 <%= link_to "Sign Out", destroy_current_member_session_path %>
 <%= current_current_member.name %>
 
-<h1>Current Members</h1>
 
-<%= render 'current_members/search_form.html.erb' %>
+
+<title>Current Members | TAMU Industry Pharmacists Organization</title>
+<center><h1>Our Members</h1></center>
 
 <center>
 <table class="styled-table">
@@ -20,6 +21,7 @@
   </thead>
 </center>
 
+<%= render 'current_members/search_form.html.erb' %>
 <center>
   <tbody>
     <% @current_members.each do |current_member| %>

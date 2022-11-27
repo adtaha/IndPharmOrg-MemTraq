@@ -13,11 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 :root {
     --maroon:#500000;
     --white:#ffffff;
+}
+
+.flash__alert   { color: red; }
+.flash__notice  { color: blue; }
+.flash__success { color: green; }
+
+.navbar-dark {
+  background:#500000;
+}
+
+.nav-item {
+  font-family: 'Open Sans';
 }
 
 h1 {
@@ -134,3 +147,6 @@ h1 {
      font-weight: bold;
      color: var(--maroon);
  }
+
+
+

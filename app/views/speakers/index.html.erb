@@ -24,7 +24,7 @@
     <% @speakers.each do |speaker| %>
       <tr>
         <td><%= speaker.speakerName %></td>
-        <td><%= Organization.where(organizationID: speakerID.organizationID).last.name %></td>
+        <td><%= Organization.where(organizationID: speaker.organizationID).last.name %></td>
         <td><%= link_to 'View', speaker, class: "c-button c-button_maroon-ghost-reverse" %></td>
         <% if current_current_member.isAdmin %>
           <td><%= link_to 'Update', edit_speaker_path(speaker), class: "c-button c-button_maroon-ghost-reverse" %></td>

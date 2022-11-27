@@ -18,8 +18,10 @@
 .flash__notice  { color: blue; }
 .flash__success { color: green; }
 
- .navbar-dark {
-    background:#500000;
-  }
+.navbar-dark {
+  background:#500000;
+}
 
-  
+.nav-item {
+  font-family: 'Open Sans';
+}

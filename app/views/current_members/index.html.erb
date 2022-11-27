@@ -3,14 +3,16 @@
 <%= link_to "Sign Out", destroy_current_member_session_path %>
 <%= current_current_member.name %>
 
-<center><h1>Current Members</h1></center>
+<h1>Current Members</h1>
+
+<%= render 'current_members/search_form.html.erb' %>
 
 <center>
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
+      <th><%= sort_link(@q, :name, "Name", {default_order: :asc}, {class: "text-white"}) %></th>
+      <th><%= sort_link(@q, :email, "Email", {default_order: :asc}, {class: "text-white"}) %></th>
       <th>Admin Status</th>
       <th>Alumni Status</th>
       <th colspan="3"></th>
@@ -24,12 +26,20 @@
       <tr>
         <td><%= current_member.name %></td>
         <td><%= current_member.email %></td>
-        <td><%= current_member.isAdmin %></td>
-        <td><%= current_member.isAlumni %></td>
-        <td><%= link_to 'View Member Info', current_member %></td>
+        <% if current_member.isAdmin %>
+          <td><i class="far fa-check fa-2x"></i></td>
+        <%else%>
+          <td><i class="far fa-times fa-2x"></i></td>
+        <%end%>
+        <% if current_member.isAlumni %>
+        <td><i class="far fa-check fa-2x"></i></td>
+      <%else%>
+        <td><i class="far fa-times fa-2x"></i></td>
+      <%end%>
+        <td><%= link_to 'View', current_member, class: "c-button c-button_maroon-ghost-reverse" %></td>
         <% if current_current_member.isAdmin %>
-          <td><%= link_to 'Update Member Info', edit_current_member_path(current_member) %></td>
-          <td><%= link_to 'Remove Member', current_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Update', edit_current_member_path(current_member), class: "c-button c-button_maroon-ghost-reverse" %></td>
+          <td><%= link_to 'Delete', current_member, method: :delete, data: { confirm: 'Are you sure?' }, class: "c-button c-delete" %></td>
         <% end %>
       </tr>
     <% end %>
@@ -40,35 +50,11 @@
 <% if current_current_member.isAdmin %>
   <br>
   <center>
-  <%= button_to 
-  'Add New Member'
-  new_current_member_path,
-  :class => "c-button c-button_maroon-ghost-reverse",
-  :method => :get
-  %>
+  <%= link_to "Add New Member", new_current_member_path, class: "c-button c-button_maroon-ghost-reverse" %>
   </center>
 
 <% end %>
 
 <br>
 
-<center>
-<%= button_to
-  'View Member Organizations',
-  member_orgs_path,
-  :class => "c-button c-button_maroon-ghost-reverse",
-  :method => :get
-  %>
-</center>
-
-<br>
-
-<center>
-<%= link_to 'Add Organization Info', new_member_org_path %>
-</center>
-
-<br>
-
-<center>
-<%= link_to 'View Speakers', speakers_path %>
-</center>
+<script src="https://kit.fontawesome.com/08f62176a8.js" crossorigin="anonymous"></script>

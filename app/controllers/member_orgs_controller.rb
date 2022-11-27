@@ -3,7 +3,8 @@ class MemberOrgsController < ApplicationController
 
      # GET /member_orgs or /member_orgs.json
      def index
-          @member_orgs = MemberOrg.all
+          @q = MemberOrg.ransack(params[:q])
+          @member_orgs = @q.result(distinct: true)
      end
 
      # GET /member_orgs/1 or /member_orgs/1.json

@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th><%= sort_link(@q, :speakerName, "Speaker Name", {default_order: :asc}, {class: "text-white"}) %></th>
-      <th><%= sort_link(@q, :organizationID, "Organization ID", {default_order: :asc}, {class: "text-white"}) %></th>
+      <th><%= sort_link(@q, :organizationID, "Organization", {default_order: :asc}, {class: "text-white"}) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
     <% @speakers.each do |speaker| %>
       <tr>
         <td><%= speaker.speakerName %></td>
-        <td><%= speaker.organizationID %></td>
+        <td><%= Organization.where(organizationID: speakerID.organizationID).last.name %></td>
         <td><%= link_to 'View', speaker, class: "c-button c-button_maroon-ghost-reverse" %></td>
         <% if current_current_member.isAdmin %>
           <td><%= link_to 'Update', edit_speaker_path(speaker), class: "c-button c-button_maroon-ghost-reverse" %></td>

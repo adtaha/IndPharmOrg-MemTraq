@@ -63,7 +63,7 @@ end
 
 RSpec.describe Speaker, type: :model do
   subject do
-    described_class.new(speakerID: 1, speakerName: "John Doe", speakerEmail: "johndoe@email.com", organizationID: 1, speakerWebsite: "www.google.com")
+    described_class.new(speakerID: 1, speakerName: "John Edoe", speakerEmail: "johnedoe@email.com", organizationID: 1, speakerWebsite: 'www.google.com')
   end
 
   it 'is valid with all valid attributes' do

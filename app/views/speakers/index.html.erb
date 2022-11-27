@@ -7,55 +7,46 @@
 <h1>Speakers</h1>
 
 <%= render 'speakers/search_form.html.erb' %>
-<table>
+
+<center>
+<table class="styled-table">
   <thead>
     <tr>
-      <th><%= sort_link(@q, :speakerID, "Speaker ID", default_order: :asc) %></th>
-      <th><%= sort_link(@q, :speakerName, "Speaker Name", default_order: :asc) %></th>
-      <th><%= sort_link(@q, :organizationID, "Organization ID", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :speakerName, "Speaker Name", {default_order: :asc}, {class: "text-white"}) %></th>
+      <th><%= sort_link(@q, :organizationID, "Organization ID", {default_order: :asc}, {class: "text-white"}) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
+</center>
 
+<center>
   <tbody>
     <% @speakers.each do |speaker| %>
       <tr>
-        <td><%= speaker.speakerID %></td>
         <td><%= speaker.speakerName %></td>
         <td><%= speaker.organizationID %></td>
-        <td><%= link_to 'Show', speaker %></td>
+        <td><%= link_to 'View', speaker, class: "c-button c-button_maroon-ghost-reverse" %></td>
         <% if current_current_member.isAdmin %>
-          <td><%= link_to 'Edit', edit_speaker_path(speaker) %></td>
-          <td><%= link_to 'Destroy', speaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Update', edit_speaker_path(speaker), class: "c-button c-button_maroon-ghost-reverse" %></td>
+          <td><%= link_to 'Delete', speaker, method: :delete, data: { confirm: 'Are you sure?' }, class: "c-button c-delete" %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+</center>
 
 <%if current_current_member.isAdmin %>
 <br>
-  <%= link_to 'New Speaker', new_speaker_path %>
+<center>
+  <%= link_to 'New Speaker', new_speaker_path, class: "c-button c-button_maroon-ghost-reverse" %>
+</center>
 <br>
 <% end %>
 
-<p>
   <strong>Speaker Media:</strong>
-  <%= link_to 'Speaker Media Drive', "https://drive.google.com/drive/folders/0AIjRbzQwq4TfUk9PVA" %>
-</p>
+  <%= link_to 'Speaker Media Drive', "https://drive.google.com/drive/folders/0AIjRbzQwq4TfUk9PVA", class: "c-button c-button_blue-ghost-reverse" %>
 
-<br>
 
-<%= link_to 'Jotform', jotform_path %>
+<%= link_to 'Jotform', jotform_path, class: "c-button c-button_yellow" %>
 
-<br>
-
-<%= link_to 'View Current Members', current_members_path %>
-
-<br>
-
-<%= link_to 'View Member Orgs', member_orgs_path %>
-
-<br>
-
-<%= link_to 'View Organizations', organizations_path %>

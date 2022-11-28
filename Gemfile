@@ -30,10 +30,10 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'dotenv'
-gem 'typhoeus'
-gem 'oauth'
+# gem 'typhoeus'
+# gem 'oauth'
 
-gem 'twitter'
+# gem 'twitter'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

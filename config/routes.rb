@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'current_members/sign_out', to: 'current_members/sessions#destroy', as: :destroy_current_member_session
   end
   get 'home', to: 'dashboards#home'
+  get 'help', to: 'help#index'
   resources :speakers
   resources :organizations
   resources :member_orgs

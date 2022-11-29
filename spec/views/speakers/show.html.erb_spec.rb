@@ -6,7 +6,7 @@ RSpec.describe('speakers/show', type: :view) do
                                            speakerID: 2,
                                            speakerName: 'Speaker Name',
                                            speakerEmail: 'Speaker Email',
-                                           organizationName: 'Organization Name',
+                                           organizationID: 2,
                                            speakerWebsite: 'Speaker Website'
                                       )
           )
@@ -17,7 +17,7 @@ RSpec.describe('speakers/show', type: :view) do
           expect(rendered).to(match(/2/))
           expect(rendered).to(match(/Speaker Name/))
           expect(rendered).to(match(/Speaker Email/))
-          expect(rendered).to(match(/Organization Name/))
+          expect(rendered).to(match(/2/))
           expect(rendered).to(match(/Speaker Website/))
      end
 end

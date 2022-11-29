@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe('current_members/show', type: :view) do
      before do
           @current_member = assign(:current_member, CurrentMember.create!(
-                                                         memberID: 2,
+                                                         memberID: '2',
                                                          name: 'Name',
                                                          email: 'Email',
                                                          isAdmin: false,

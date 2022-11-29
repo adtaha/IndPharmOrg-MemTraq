@@ -6,12 +6,11 @@ Rails.application.routes.draw do
     get 'current_members/sign_out', to: 'current_members/sessions#destroy', as: :destroy_current_member_session
   end
   get 'home', to: 'dashboards#home'
+  get 'help', to: 'help#index'
   resources :speakers
   resources :organizations
   resources :member_orgs
   resources :current_members
   get '/jotform' => 'jotform#index'
-  match 'twitter/get_tweets', to: 'twitter#get_tweets', via: [:get, :post]
-  # root 'current_members#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

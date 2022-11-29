@@ -3,7 +3,8 @@ class CurrentMembersController < ApplicationController
 
      # GET /current_members or /current_members.json
      def index
-          @current_members = CurrentMember.all
+          @q = CurrentMember.ransack(params[:q])
+          @current_members = @q.result(distinct: true)
      end
 
      # GET /current_members/1 or /current_members/1.json

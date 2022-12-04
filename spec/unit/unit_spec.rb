@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe(CurrentMember, type: :model) do
      subject do
-          described_class.new(memberID: 1, name: 'John Doe', email: 'johndoe@email.com', isAdmin: true, isAlumni: true)
-          described_class.new(memberID: 1, name: 'Jane Doe', email: 'janedoe@email.com', isAdmin: false, isAlumni: false)
+          described_class.new(memberID: '1', name: 'John Doe', email: 'johndoe@email.com', isAdmin: true, isAlumni: true)
+          described_class.new(memberID: '2', name: 'Jane Doe', email: 'janedoe@email.com', isAdmin: false, isAlumni: false)
      end
 
      it 'is valid with all valid attributes' do
@@ -63,7 +63,7 @@ end
 
 RSpec.describe Speaker, type: :model do
   subject do
-    described_class.new(speakerID: 1, speakerName: "John Doe", speakerEmail: "johndoe@email.com", organizationID: 1, speakerWebsite: "www.google.com")
+    described_class.new(speakerID: 1, speakerName: "John Edoe", speakerEmail: "johnedoe@email.com", organizationID: 1, speakerWebsite: 'www.google.com')
   end
 
   it 'is valid with all valid attributes' do

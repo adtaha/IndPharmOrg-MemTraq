@@ -4,7 +4,7 @@ RSpec.describe('current_members/index', type: :view) do
      before do
           assign(:current_members, [
                CurrentMember.create!(
-                    memberID: 2,
+                    memberID: '1',
                     name: 'Name',
                     email: 'Email',
                     isAdmin: false,
@@ -13,7 +13,7 @@ RSpec.describe('current_members/index', type: :view) do
                CurrentMember.create!(
                     memberID: 2,
                     name: 'Name',
-                    email: 'Email',
+                    email: 'Email2',
                     isAdmin: false,
                     isAlumni: false
                )

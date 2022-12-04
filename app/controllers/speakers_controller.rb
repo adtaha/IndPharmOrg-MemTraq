@@ -58,6 +58,9 @@ class SpeakersController < ApplicationController
 
      private
 
+     def set_speaker
+          @speaker = Speaker.find(params[:id])
+     end
 
     # Only allow a list of trusted parameters through.
     def speaker_params

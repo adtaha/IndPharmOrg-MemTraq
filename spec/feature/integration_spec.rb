@@ -1,6 +1,7 @@
 require 'rails_helper'
+include Warden::Test::Helpers
+Warden.test_mode!
 
-# Example
 RSpec.describe('Creating a current member', type: :feature) do
      it 'valid inputs for a member who is an alumni and an admin' do
           visit new_current_member_path
@@ -11,7 +12,7 @@ RSpec.describe('Creating a current member', type: :feature) do
           check 'Isalumni'
           click_on 'Create Current member'
           visit current_members_path
-          expect(page).to(have_content(1))
+          expect(page).to(have_content('1'))
           expect(page).to(have_content('John Doe'))
           expect(page).to(have_content('johndoe@email.com'))
           expect(page).to(have_content(true))
@@ -27,7 +28,7 @@ RSpec.describe('Creating a current member', type: :feature) do
           uncheck 'Isalumni'
           click_on 'Create Current member'
           visit current_members_path
-          expect(page).to(have_content(2))
+          expect(page).to(have_content('2'))
           expect(page).to(have_content('Jane Doe'))
           expect(page).to(have_content('janedoe@email.com'))
           expect(page).to(have_content(false))
@@ -50,18 +51,20 @@ RSpec.describe('Creating a organization', type: :feature) do
 end
 
 RSpec.describe 'Creating a Speaker', type: :feature do
-  scenario 'valid inputs for a speaker' do
-    visit new_speaker_path
-    fill_in 'Speakerid', with: 1
-    fill_in 'Speakername', with: 'John Doe'
-    fill_in 'Speakeremail', with: 'johndoe@email.com'
-    fill_in 'OrganizationID', with: 1
-    fill_in 'Speakerwebsite', with: 'www.google.com'
-    click_on 'Create Speaker'
-    visit speakers_path
-    expect(page).to have_content(1)
-    expect(page).to have_content('John Doe')
-    expect(page).to have_content(1)
-  end
+     scenario 'valid inputs for a speaker' do
+          visit new_speaker_path
+          fill_in 'speaker_speakerID', with: 1
+          fill_in 'Speakername', with: 'John Edoe'
+          fill_in 'Speakeremail', with: 'johnedoe@email.com'
+          fill_in 'OrganizationID', with: 1
+          fill_in 'Speakerwebsite', with: 'www.google.com'
+          click_on 'Create Speaker'
+          visit speakers_path
+          expect(page).to have_content(1)
+          expect(page).to have_content('John Edoe')
+          expect(page).to have_content('johnedoe@email.com')
+          expect(page).to have_content(1)
+          expect(page).to have_content('www.google.com')
+     end
 end
 

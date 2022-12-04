@@ -3,22 +3,25 @@
 <%= link_to "Sign Out", destroy_current_member_session_path %>
 <%= current_current_member.name %>
 
+
+<title>Member Organizations | TAMU Industry Pharmacists Organization</title>
 <center><h1>Organizations Our Members Are a Part of</h1></center>
 
 <center><p>Here is a list of members and the organizations they are a part of</p></center>
 
 <center>
-<table>
+<table class="styled-table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Organizations</th>
+      <th><%= sort_link(@q, :memberID, "Name", {default_order: :asc}, {class: "text-white"}) %></th>
+      <th><%= sort_link(@q, :memberID, "Email", {default_order: :asc}, {class: "text-white"}) %></th>
+      <th><%= sort_link(@q, :organizationID, "Organizations", {default_order: :asc}, {class: "text-white"}) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 </center>
 
+<%= render 'member_orgs/search_form.html.erb' %>
 <center>
   <tbody>
     <% @member_orgs.each do |member_org| %>
@@ -26,10 +29,11 @@
         <td><%= CurrentMember.where(memberID: member_org.memberID).last.name %></td>
         <td><%= CurrentMember.where(memberID: member_org.memberID).last.email %></td>
         <td><%= Organization.where(organizationID: member_org.organizationID).last.name %></td>
-        <td><%= member_org.organizationID %></td>
-        <td><%= link_to 'View Member Organizations', member_org %></td>
-        <td><%= link_to 'Update Member Organizations', edit_member_org_path(member_org) %></td>
-        <td><%= link_to 'Remove Member from an Organization', member_org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', member_org, class: "c-button c-button_maroon-ghost-reverse" %></td>
+        <% if current_current_member.isAdmin %>
+          <td><%= link_to 'Update', edit_member_org_path(member_org), class: "c-button c-button_maroon-ghost-reverse" %></td>
+          <td><%= link_to 'Delete', member_org, method: :delete, data: { confirm: 'Are you sure?' }, class: "c-button c-delete" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -39,17 +43,7 @@
 <br>
 
 <center>
-<%= link_to 'Add a Member to an Organization', new_member_org_path %>
+<%= link_to 'Add a Member to an Organization', new_member_org_path, class: "c-button c-button_maroon-ghost-reverse" %>
 </center>
 
 <br>
-
-<center>
-<%= link_to 'Current Members (Officer View)', current_members_path %>
-</center>
-
-<br>
-
-<center>
-<%= link_to 'View Organizations', organizations_path %>
-</center>

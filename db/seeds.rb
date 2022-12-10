@@ -7,7 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first
 
 CurrentMember.create!([
-     { memberID: '1', name: 'Adam Taha', email: 'azt28@tamu.edu', isAdmin: true, isAlumni: false },
-     { memberID: '2', name: 'Juan', email: 'juanchavez@tamu.edu', isAdmin: true, isAlumni: false },
      { memberID: '3', name: 'Sara Rogers', email: 'sararogers@tamu.edu', isAdmin: true, isAlumni: false }
 ])
